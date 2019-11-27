@@ -1,0 +1,75 @@
+<?php
+    $opt=array();
+    session_start();
+    if(isset($_SESSION['isLogin'])){
+        if($_SESSION['isLogin']===1){
+            $opt=array(
+                "code"=>200,
+                "msg"=>$_SESSION['UserName']."已登录，无需重复请求",
+                "data"=>array(
+                    "UserName"=>$_SESSION['UserName'],
+                    "Auth"=>$_SESSION['Auth'],
+                )
+            );
+            goto echoend;
+        }
+    }
+    require "db.php";
+    $db=new Db;
+    if(isset($_POST['UserName'])&&isset($_POST['Password'])){
+        $username=$_POST['UserName'];
+        $password=$_POST['Password'];
+        $data=$db->myquery("select * from login where UserName='".$username."' and Password='".$password."'");
+        if($data){
+            if($data[0][4]!=1){
+                $opt=array(
+                    "code"=>201,
+                    "msg"=>"用户因为未知原因，暂时无法使用",
+                    "data"=>array(
+                        "UserName"=>$data[0][1],
+                        "Auth"=>$data[0][3],
+                    )
+                );
+            }else{
+                $opt=array(
+                    "code"=>200,
+                    "msg"=>"欢迎您，".$data[0][1],
+                    "data"=>array(
+                        "UserName"=>$data[0][1],
+                        "Auth"=>$data[0][3],
+                    )
+                );
+                $_SESSION=array(
+                    "Uid"=>$data[0][0],
+                    "UserName"=>$data[0][1],
+                    "Password"=>$data[0][2],
+                    "Auth"=>$data[0][3],
+                    "Enable"=>$data[0][4],
+                    "CreateTime"=>$data[0][5],
+                    "CreateBy"=>$data[0][6],
+                    "isLogin"=>1
+                );
+            }
+        }else{
+            $opt=array(
+                "code"=>400,
+                "msg"=>"用户名或密码错误",
+                "data"=>array(
+                )
+            );
+        }
+    }else{
+        $opt=array(
+            "code"=>402,
+            "msg"=>"数据传入错误，请联系管理员",
+            "data"=>array(
+            )
+        );
+    }
+echoend:
+    header('Content-type: application/json');
+    header('Access-Control-Allow-Origin:*');
+    header('Access-Control-Allow-Headers:X-Requested-With,Content-Type');
+    header('Access-Control-Allow-Methods:PUT,POST,GET,DELETE,OPTIONS');
+    echo json_encode($opt,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+?>
