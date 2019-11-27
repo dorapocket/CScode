@@ -1,0 +1,17 @@
+16
+pwd
+touch sss
+touch fds
+touch fdss
+cd sss
+cd fds
+cd .../fdss
+cat ./sss
+tac .../sss/fff jkdj
+tac ./sss jjjjff
+cat ./sss
+ls
+tac ./sss yyyyy
+cat ./sss
+tac ./sss/fds ttt
+cat ./sss/fds ttt
