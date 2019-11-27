@@ -1,0 +1,19 @@
+18
+ls
+makdir sss
+makdir qq
+ls
+cd sss
+touch aaa
+tac ./aaa ssss
+cd
+pwd
+cat .../sss/aaa
+tac ./qq hhhhhgg
+touch dsds
+cd dsds
+tac ./dsds jdkjf jfdklsjf
+cat ./dsds
+cat ./jhg
+ls
+pwd

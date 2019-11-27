@@ -1,0 +1,19 @@
+18
+makdir jj
+cd jj
+pwd
+makdir kk
+cd kk
+pwd
+makdir ll
+cd .../jj/kk/ll
+pwd
+makdir ii
+cd ii
+pwd
+makdir ss
+cd ..
+cd .../jj/kk/ll/ii/ss
+pwd
+makdir ff
+pwd

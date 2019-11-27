@@ -1,0 +1,19 @@
+18
+ls
+makdir sss
+makdir qq
+ls
+cd sss
+touch aaa
+tac ./aaa ssss
+cd
+pwd
+touch bbb
+cat .../bbb/aaa
+pwd
+cd qq
+pwd
+touch aaa
+cat ./aaa
+pwd
+ls

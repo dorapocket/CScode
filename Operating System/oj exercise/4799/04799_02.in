@@ -1,0 +1,19 @@
+18
+makdir XXX
+pwd
+ls
+cd XXY
+cd ..
+cd XXX
+pwd
+ls
+touch AAA
+cd
+tac ./BBB lalala
+tac ./AAA lalala
+cat ./AAA
+tac .../XXX/AAA lululu
+cat .../XXX/AAA
+cat ./AAA
+cd ..
+cat ./XXX/AAA
