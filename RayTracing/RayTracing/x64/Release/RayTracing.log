@@ -1,0 +1,8 @@
+﻿  raytrace_main.cpp
+C:\Users\dorap\Desktop\cg\RayTracing_LGY\RayTracing\RayTracing\raytrace_main.cpp(18,20): warning C4305: “return”: 从“double”到“bool”截断
+  正在生成代码
+  1 of 302 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  RayTracing.vcxproj -> C:\Users\dorap\Desktop\cg\RayTracing_LGY\RayTracing\x64\Release\RayTracing.exe

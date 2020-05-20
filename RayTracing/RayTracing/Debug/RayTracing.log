@@ -1,0 +1,3 @@
+﻿  raytrace_main.cpp
+C:\Users\dorap\Desktop\cg\RayTracing_LGY\RayTracing\RayTracing\raytrace_main.cpp(18,20): warning C4305: “return”: 从“double”到“bool”截断
+  RayTracing.vcxproj -> C:\Users\dorap\Desktop\cg\RayTracing_LGY\RayTracing\Debug\RayTracing.exe
